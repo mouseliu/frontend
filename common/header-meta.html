@@ -1,0 +1,44 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="https://a.alipayobjects.com/alice/??box/1.1.0/box.css,button/1.2.0/button.css,button-dropdown/1.2.0/button-dropdown.css,form/1.0.2/form.css,list/1.0.1/list.css,nav/1.0.0/nav.css,paging/1.0.1/paging.css,poptip/1.1.1/poptip.css,tab/1.0.0/tab.css,table/1.0.1/table.css,tipbox/1.1.0/tipbox.css,tiptext/1.1.0/tiptext.css,select/1.0.2/select.css,loading/1.0.0/loading.css,step/1.0.3/step.css">
+    <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all"/>
+    <style>
+@font-face {
+    font-family: "rei";
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20140606"); /* IE9 */
+    src: url("https://i.alipayobjects.com/common/fonts/rei.eot?20140606#iefix") format("embedded-opentype"),
+    url("https://i.alipayobjects.com/common/fonts/rei.woff?20140606") format("woff"), 
+    url("https://i.alipayobjects.com/common/fonts/rei.ttf?20140606")  format("truetype"), 
+    url("https://i.alipayobjects.com/common/fonts/rei.svg?20140606#rei") format("svg"); /* iOS 4.1- */
+}
+.iconfont {
+    font-family:"rei";
+    font-style: normal;
+    font-weight: normal;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+</style>
+<script type="text/javascript" src="js/jquery1.min.js"></script>
+<script charset="utf-8" id="seajsnode"src="http://static.alipayobjects.com/seajs/??seajs/2.2.0/sea.js,seajs-combo/1.0.1/seajs-combo.js,seajs-style/1.0.2/seajs-style.js"></script>
+<script>
+  seajs.config({
+    base: 'http://static.alipayobjects.com',
+    alias: {
+      '$': 'jquery/jquery/1.7.2/jquery',
+    '$-debug': 'jquery/jquery/1.7.2/jquery',
+    'jquery': 'jquery/jquery/1.7.2/jquery',
+    'jquery-debug': 'jquery/jquery/1.7.2/jquery-debug',
+    'seajs-debug': 'seajs/seajs-debug/1.1.1/seajs-debug'
+    }
+  });
+  define('hack$', [], function(){ return window.$; });
+seajs.use('hack$');
+seajs.cache[seajs.resolve('$')] = seajs.cache[seajs.resolve('$-debug')] =
+seajs.cache[seajs.resolve('jquery')] = seajs.cache[seajs.resolve('jquery-debug')] = seajs.cache[seajs.resolve('hack$')];
+</script>
+    <!-- start menu -->
+    <script type="text/javascript" src="js/megamenu.js"></script>
+    <script src="js/jquery.easydropdown.js"></script>
