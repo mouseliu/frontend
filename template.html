@@ -1,15 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>提交订单 :: 智购网——中国移动旗下购物平台</title>
+    <title>商品列表示例页面 :: 智购网——中国移动旗下购物平台</title>
     <!--#include file="common/header-meta.html" -->
 </head>
 <body>
 <!--#include file="common/header-body.html" -->
          <div class="register_account">
            <div class="wrap">
-    	     <h4 class="title">Shopping cart is empty</h4>
-    	     <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.html"> here</a> to continue shopping</p>
+    	     <h4 class="title">示例页面</h4>
+    	     <div id="demo"></div>
+    	     <script type="text/javascript">
+    	     	seajs.use('/js/list/list',function (List) {
+    	     		var list = new List({
+                        element: '#demo'
+                    });
+    	     	});
+    	     </script>
     	   </div>
     	</div>
 <!--#include file="common/footer.html" -->

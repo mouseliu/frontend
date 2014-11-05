@@ -22,23 +22,9 @@
 }
 </style>
 <script type="text/javascript" src="js/jquery1.min.js"></script>
-<script charset="utf-8" id="seajsnode"src="http://static.alipayobjects.com/seajs/??seajs/2.2.0/sea.js,seajs-combo/1.0.1/seajs-combo.js,seajs-style/1.0.2/seajs-style.js"></script>
-<script>
-  seajs.config({
-    base: 'http://static.alipayobjects.com',
-    alias: {
-      '$': 'jquery/jquery/1.7.2/jquery',
-    '$-debug': 'jquery/jquery/1.7.2/jquery',
-    'jquery': 'jquery/jquery/1.7.2/jquery',
-    'jquery-debug': 'jquery/jquery/1.7.2/jquery-debug',
-    'seajs-debug': 'seajs/seajs-debug/1.1.1/seajs-debug'
-    }
-  });
-  define('hack$', [], function(){ return window.$; });
-seajs.use('hack$');
-seajs.cache[seajs.resolve('$')] = seajs.cache[seajs.resolve('$-debug')] =
-seajs.cache[seajs.resolve('jquery')] = seajs.cache[seajs.resolve('jquery-debug')] = seajs.cache[seajs.resolve('hack$')];
-</script>
+<!-- <script charset="utf-8" id="seajsnode"src="http://static.alipayobjects.com/seajs/??seajs/2.2.0/sea.js,seajs-combo/1.0.1/seajs-combo.js,seajs-style/1.0.2/seajs-style.js"></script> 开发阶段暂时去掉combo -->
+<script charset="utf-8" id="seajsnode"src="http://static.alipayobjects.com/seajs/??seajs/2.2.0/sea.js,seajs-style/1.0.2/seajs-style.js,seajs-text/1.0.2/seajs-text.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
     <!-- start menu -->
     <script type="text/javascript" src="js/megamenu.js"></script>
     <script src="js/jquery.easydropdown.js"></script>
