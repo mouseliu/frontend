@@ -6,6 +6,7 @@
 
     <!--start slider -->
     <link rel="stylesheet" href="css/fwslider.css" media="all">
+
     <script src="js/fwslider.js"></script>
     <!--end slider -->
 </head>
@@ -22,7 +23,27 @@
         <li class="ui-switchable-trigger">●</li>
     </ul>
 </div>
-
+<div id="fwslider" style="display:none;">
+    <div class="slider_container">
+        <div class="slide">
+            <a href="single.html">
+            <!-- Slide image -->
+            <img src="http://iot.10086.cn/mediafiles/2014-10-16/1409137136183.jpg" height="396" alt=""/>
+            <!-- /Slide image -->
+            </a>
+        </div>
+        <!-- /Duplicate to create more slides -->
+        <div class="slide">
+            <a href="single.html">
+            <img src="http://www.koostore.com/img/baoershouye.gif" height="396" alt=""/>
+            </a>
+        </div>
+        <!--/slide -->
+    </div>
+    <div class="timers"></div>
+    <div class="slidePrev"><span></span></div>
+    <div class="slideNext"><span></span></div>
+</div>
 <!--/slider -->
 <div class="main">
 <div class="wrap">
@@ -438,6 +459,21 @@
 <div class="rsidebar span_1_of_left">
     <div class="top-border"></div>
     <div class="border">
+        <!-- <link href="css/default.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="css/nivo-slider.css" rel="stylesheet" type="text/css" media="all"/>
+        <script src="js/jquery.nivo.slider.js"></script>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $('#slider').nivoSlider();
+            });
+        </script>
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                
+                <img src="images/side-2.jpg" alt=""/>
+                <img src="images/side-3.jpg" alt=""/>
+            </div>
+        </div> -->
         <div id="slide-demo-2" class="slide-demo">
             <ul data-switchable-role="content" class="ui-switchable-content">
                 <li class="hidden ui-switchable-panel"><img src="images/side-1.jpg" alt=""/></li>
