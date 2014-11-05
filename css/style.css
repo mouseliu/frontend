@@ -1132,7 +1132,7 @@ table {
 .register_account table td {
 	width: 100%;
 }
-.register_account form input[type="text"], .register_account form select {
+/*.register_account form input[type="text"], .register_account form select {
 	font-size: 0.95em;
 	color: #777;
 	padding: 8px;
@@ -1157,7 +1157,7 @@ table {
 }
 .register_account form input[type="text"].number {
 	width: 69.8%;
-}
+}*/
 p.terms a, p.note a {
 	text-decoration: underline;
 	color: #555;
