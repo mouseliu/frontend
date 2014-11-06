@@ -863,3 +863,13 @@ ul.delivery-list li a:hover { color: #000; }
 .pagin .prev-disabled b { left: 0; border-style: dashed solid dashed dashed; border-color: transparent #999 transparent transparent; }
 .pagin .next b { right: 0; border-style: dashed dashed dashed solid; border-color: transparent transparent transparent #E4393C; }
 .pagin .next-disabled b { right: 0; border-style: dashed dashed dashed solid; border-color: transparent transparent transparent #999; }
+
+.ui-checkcode-imgcode-img {
+	vertical-align: middle;
+}
+.ui-text {
+width: 220px;
+height: 30px;
+line-height: 30px;
+font-size: 14px;
+}
