@@ -191,7 +191,7 @@
 #slide-demo-2 {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 365px;
     overflow: hidden;
 }
 #slide-demo-2 .ui-switchable-content {
@@ -202,11 +202,12 @@
 #slide-demo-2 .ui-switchable-content .ui-switchable-panel {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 365px;
     overflow: hidden;
 }
 #slide-demo-2 .ui-switchable-content .ui-switchable-panel img {
     width: 100%;
+    height: 365px;
 }
 #slide-demo-2 .ui-switchable-nav {
     position: absolute;
