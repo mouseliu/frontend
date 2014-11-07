@@ -26,7 +26,8 @@ seajs.config({
         'calendar': 'arale/calendar/1.0.0/calendar',
         'jsuri': 'gallery/jsuri/1.2.2/jsuri',
         'md5': 'gallery/blueimp-md5/1.1.0/md5'
-    }
+    },
+    comboExcludes: /\/js\/.*/
 });
 define('hack$', [], function() {
     return window.$;
