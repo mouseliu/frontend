@@ -43,6 +43,7 @@ seajs.use(['validator', '$'], function(Validator, $) {
             failSilently: true
         });
 
+
         validator.addItem({
             element: '[name="telphone"]',
             required: true,
@@ -62,12 +63,6 @@ seajs.use(['validator', '$'], function(Validator, $) {
                 window.console && console.log && console.log(err, results, form);
             },
             failSilently: true
-        });
-         validatorPass.addItem({
-            element: '#username',
-            required: true,
-            rule: 'text'
-        })
 
         validatorPass.addItem({
             element: '#password',
