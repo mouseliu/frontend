@@ -1,30 +1,9 @@
 // Login Form
-
-$(function() {
-    var button = $('#loginButton');
-    var box = $('#loginBox');
-    var form = $('#loginForm');
-    button.removeAttr('href');
-    button.mouseup(function(login) {
-        box.toggle();
-        button.toggleClass('active');
-    });
-    form.mouseup(function() { 
-        return false;
-    });
-    $(this).mouseup(function(login) {
-        if(!($(login.target).parent('#loginButton').length > 0)) {
-            button.removeClass('active');
-            box.hide();
-        }
-    });
-});
-
-seajs.use(['validator', '$'], function(Validator, $) {
+seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
     $(function() {
         var NewValidator = Validator.extend({
             attrs: {
-                showMessage: function (message, element) {
+                showMessage: function(message, element) {
                     message = '<i class="ui-tiptext-icon iconfont">&#xF045;</i>\
                                <span class="ui-form-explain-text">' + message + '</span>';
                     this.getExplain(element)
@@ -34,6 +13,8 @@ seajs.use(['validator', '$'], function(Validator, $) {
                 }
             }
         });
+
+
 
         var validator = new NewValidator({
             element: '#test-form',
@@ -61,8 +42,13 @@ seajs.use(['validator', '$'], function(Validator, $) {
             element: '#test-form-pass',
             onFormValidated: function(err, results, form) {
                 window.console && console.log && console.log(err, results, form);
+                var reg_data = {
+                    mobile: ,
+                    password: md5($('#password').val() + 'iotmaill@2014', 'youhua'),
+                    validCode: ,
+                };
             },
-            failSilently: true
+            failSilently: true});
 
         validatorPass.addItem({
             element: '#password',
@@ -78,8 +64,3 @@ seajs.use(['validator', '$'], function(Validator, $) {
         })
     });
 });
-
-
-
-
-
