@@ -1,92 +1,113 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>登录 :: 智购网</title>
-<!--#include file="common/header-meta.html" -->
+	<title>登录 :: 智购网</title>
+	<!--#include file="common/header-meta.html" -->
+	<script src="js/login.js"></script>
 </head>
 <body>
-<!--#include file="common/header-body.html" -->
-        <div class="login">
-          	<div class="wrap">
-				<div class="col_1_of_login span_1_of_login">
-					<h4 class="title">New Customers</h4>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan</p>
-					<div class="button1">
-					   <a href="register.html"><input type="submit" name="Submit" value="Create an Account"></a>
-					 </div>
-					 <div class="clear"></div>
+	<!--#include file="common/header-body.html" -->
+	<div class="login">
+		<div class="wrap">
+			<h4 class="title">登陆</h4>
+			<form id="test-form-login" class="ui-form">
+				<div class="ui-form-item">
+					<label for="username" class="ui-label"><span class="ui-form-required">*</span>手机号：</label>
+					<input id="username" name="username" class="ui-input" type="text" />
 				</div>
-				<div class="col_1_of_login span_1_of_login">
-				<div class="login-title">
-	           		<h4 class="title">Registered Customers</h4>
-					<div id="loginbox" class="loginbox">
-						<form action="" method="post" name="login" id="login-form">
-						  <fieldset class="input">
-						    <p id="login-form-username">
-						      <label for="modlgn_username">Email</label>
-						      <input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <p id="login-form-password">
-						      <label for="modlgn_passwd">Password</label>
-						      <input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18" autocomplete="off">
-						    </p>
-						    <div class="remember">
-							    <p id="login-form-remember">
-							      <label for="modlgn_remember"><a href="#">Forget Your Password ? </a></label>
-							   </p>
-							    <input type="submit" name="Submit" class="button" value="Login"><div class="clear"></div>
-							 </div>
-						  </fieldset>
-						 </form>
-					</div>
-			    </div>
+				<div class="ui-form-item">
+					<label for="password" class="ui-label">
+						<span class="ui-form-required">*</span>
+						密码：
+					</label>
+					<input id="password" name="password" type="password" class="ui-input" data-explain="请输入5-20位的密码。" value="123">
+					<div class="ui-form-explain">密码的长度必须大于或等于5。</div>
+				</div>
+				<div class="ui-form-item">
+					<input type="submit" class="ui-button ui-button-lorange" value="登录"></div>
+
+			</form>
+			<div class="col_1_of_login span_1_of_login hide">
+				<h4 class="title">New Customers</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
+				</p>
+				<div class="button1">
+					<a href="register.html">
+						<input type="submit" name="Submit" value="Create an Account"></a>
 				</div>
 				<div class="clear"></div>
-				<ol class="ui-step ui-step-5">
-    <li class="ui-step-start ui-step-done">
-        <div class="ui-step-line">-</div>
-        <div class="ui-step-icon">
-            <i class="iconfont">&#xf02f;</i>
-            <i class="ui-step-number">1</i>
-            <span class="ui-step-text">第一步</span>
-        </div>
-    </li>
-    <li class="ui-step-done">
-        <div class="ui-step-line">-</div>
-        <div class="ui-step-icon">
-            <i class="iconfont">&#xf02f;</i>
-            <i class="ui-step-number">2</i>
-            <span class="ui-step-text">第二步</span>
-        </div>
-    </li>
-    <li class="ui-step-done">
-        <div class="ui-step-line">-</div>
-        <div class="ui-step-icon">
-            <i class="iconfont">&#xf02f;</i>
-            <i class="ui-step-number">3</i>
-            <span class="ui-step-text">第三步</span>
-        </div>
-    </li>
-    <li class="ui-step-active">
-        <div class="ui-step-line">-</div>
-        <div class="ui-step-icon">
-            <i class="iconfont">&#xf02f;</i>
-            <i class="ui-step-number">4</i>
-            <span class="ui-step-text">第四步</span>
-        </div>
-    </li>
-    <li class="ui-step-end">
-        <div class="ui-step-line">-</div>
-        <div class="ui-step-icon">
-            <i class="iconfont">&#xf02f;</i>
-            <i class="iconfont ui-step-number">&#xF029;</i>
-            <span class="ui-step-text">第五步</span>
-        </div>
-    </li>
-</ol>
 			</div>
+			<div class="col_1_of_login span_1_of_login hide">
+				<div class="login-title">
+					<h4 class="title">Registered Customers</h4>
+					<div id="loginbox" class="loginbox">
+						<form action="" method="post" name="login" id="login-form">
+							<fieldset class="input">
+								<p id="login-form-username">
+									<label for="modlgn_username">Email</label>
+									<input id="modlgn_username" type="text" name="email" class="inputbox" size="18" autocomplete="off"></p>
+								<p id="login-form-password">
+									<label for="modlgn_passwd">Password</label>
+									<input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18" autocomplete="off"></p>
+								<div class="remember">
+									<p id="login-form-remember">
+										<label for="modlgn_remember">
+											<a href="#">Forget Your Password ?</a>
+										</label>
+									</p>
+									<input type="submit" name="Submit" class="button" value="Login">
+									<div class="clear"></div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<ol class="ui-step ui-step-5">
+				<li class="ui-step-start ui-step-done">
+					<div class="ui-step-line">-</div>
+					<div class="ui-step-icon"> <i class="iconfont">&#xf02f;</i> <i class="ui-step-number">1</i>
+						<span class="ui-step-text">第一步</span>
+					</div>
+				</li>
+				<li class="ui-step-done">
+					<div class="ui-step-line">-</div>
+					<div class="ui-step-icon">
+						<i class="iconfont">&#xf02f;</i>
+						<i class="ui-step-number">2</i>
+						<span class="ui-step-text">第二步</span>
+					</div>
+				</li>
+				<li class="ui-step-done">
+					<div class="ui-step-line">-</div>
+					<div class="ui-step-icon">
+						<i class="iconfont">&#xf02f;</i>
+						<i class="ui-step-number">3</i>
+						<span class="ui-step-text">第三步</span>
+					</div>
+				</li>
+				<li class="ui-step-active">
+					<div class="ui-step-line">-</div>
+					<div class="ui-step-icon">
+						<i class="iconfont">&#xf02f;</i>
+						<i class="ui-step-number">4</i>
+						<span class="ui-step-text">第四步</span>
+					</div>
+				</li>
+				<li class="ui-step-end">
+					<div class="ui-step-line">-</div>
+					<div class="ui-step-icon">
+						<i class="iconfont">&#xf02f;</i>
+						<i class="iconfont ui-step-number">&#xF029;</i>
+						<span class="ui-step-text">第五步</span>
+					</div>
+				</li>
+			</ol>
 		</div>
+	</div>
 
-<!--#include file="common/footer.html" -->		
+	<!--#include file="common/footer.html" -->
 </body>
 </html>
