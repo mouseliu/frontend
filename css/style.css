@@ -873,3 +873,11 @@ height: 30px;
 line-height: 30px;
 font-size: 14px;
 }
+/*reg step*/
+.cell {padding: 10px 0;}
+#step1 #test-form-pass {display: none;}
+#step1 .ui-tipbox {display: none;}
+#step2 #test-form {display: none;}
+#step2 .ui-tipbox {display: none;}
+#step3 #test-form {display: none;}
+#step3 #test-form-pass {display: none;}
