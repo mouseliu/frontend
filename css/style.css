@@ -881,3 +881,17 @@ font-size: 14px;
 #step2 .ui-tipbox {display: none;}
 #step3 #test-form {display: none;}
 #step3 #test-form-pass {display: none;}
+/*list-box*/
+.list-box {
+	overflow: hidden;
+}
+.list-box li {
+	float: left;
+	width: 25%;
+	font-size: 12px;
+}
+.list-main {padding: 5px;background: #fff;font-family: "Microsoft YaHei"}
+.list-main .dese {height: 40px;line-height: 18px;padding: 2px 0;}
+.list-main .dese a {color: #666;}
+.list-main .dese a:hover {color: #E4393C;}
+.list-main .price {line-height: 20px;color: #E4393C;font-size: 14px;}
