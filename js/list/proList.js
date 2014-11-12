@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
     var $ = require('$'),
         Widget = require('widget'),
+		Jsurl = require('jsuri'),
         tpl = require('./proList.handlebars');
     var Templatable = require('templatable');
     require('./css.css');
@@ -11,7 +12,7 @@ define(function (require, exports, module) {
         8: 'advert/leaflet'
     };
     var baseUrl = 'http://kuaiyin.zhubajie.com/app/api/';
-
+	var urlParam = new Jsurl(window.location.href);
 
     var list = Widget.extend({
         Implements: Templatable,
@@ -67,6 +68,7 @@ define(function (require, exports, module) {
             var _this = this;
 			
             var url = baseUrl + category[pid] + '/' + this.get('page');
+			// var url = baseUrl + '?category=' + pid + '&sorts=' + sorts + '&param=' + urlParam.query() + '&page=' + this.get('page')
             // sysTip.show('玩儿命加载中，请稍候……');
             $.ajax({
                 url: url,

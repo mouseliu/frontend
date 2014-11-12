@@ -104,9 +104,9 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             return false;
         };
         if (!options.customErr) { //如果自定义错误提示为true，跳过默认拦截
-            if (!t.isOK.apply(t, arguments)) {
+           /* if (!t.isOK.apply(t, arguments)) {
                 return;
-            }
+            }*/
         }
         originalOptions.success && originalOptions.success.apply(options.context || this, arguments);
     };
