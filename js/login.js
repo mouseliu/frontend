@@ -1,5 +1,5 @@
 // Login Form
-seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
+seajs.use(['validator', '$', 'md5','cookie'], function(Validator, $, md5,Cookie) {
 	$(function() {
 		var NewValidator = Validator.extend({
 			attrs: {
@@ -19,7 +19,7 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
 			onFormValidated: function(err, results, form) {
 				window.console && console.log && console.log(err, results, form);
 			},
-			autoSubmit :false,
+			autoSubmit: false,
 			failSilently: true
 		});
 		validatorLogin.addItem({
@@ -42,31 +42,38 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
 		})
 		validatorLogin.addItem({
 			element: '#login',
-			 required: true,
+			required: true,
 			onItemValidated: function(elem) {
-				var url="http://127.0.0.1:81/json/login.json";
-		       $.ajax({
-		           url: url,
-		           //context: this,
-		           dataType: 'json',
-		           success: function (data) {
-		               var has=false;
-                      for(i=0;i<data.length;i++){
-		               	if ($("#mobile").val()==data[i].mobile&&$("#password").val()==data[i].password) {
-                              has=true;
-                          }
-                      }
-                      if (has) {
-                          console.log("登陆成功");
-                      }else{
-                           console.log("手机号码或密码错误");
-                      };
-		           },
-		           error:function(message){
-		               //message
-		           }
-		       });
-		    }
+				var url = "http://127.0.0.1:81/json/login.json";
+				$.ajax({
+					url: url,
+					//context: this,
+					dataType: 'json',
+					success: function(data) {
+						var has = false;
+						for (i = 0; i < data.length; i++) {
+							if ($("#mobile").val() == data[i].mobile && $("#password").val() == data[i].password) {
+								has = true;
+							}
+						}
+						if (has) {
+							$("#login").parent().removeClass("ui-form-item-error")
+							$("#login").next().html("")
+						   	Cookie.set('mobile', $("#mobile").val(), {
+						        domain: 'example.com',
+						        path: '/',
+						        expires: 30
+						    });
+						} else {
+							$("#login").parent().addClass("ui-form-item-error")
+							$("#login").next().html("手机号码或密码错误")
+						};
+					},
+					error: function(message) {
+						//message
+					}
+				});
+			}
 		})
 
 	});

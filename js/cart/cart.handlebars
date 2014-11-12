@@ -1,0 +1,60 @@
+<div>
+{{#if pages}}
+<p class="ui-paging">
+  {{#pages}}
+    {{#if link}}
+    <a class="ui-paging-item
+    {{#if active}}
+     ui-paging-current
+    {{/if}}
+    " 
+    data-page="{{text}}"
+    href="#">{{text}}</a>
+    {{else}}
+    <span class="ui-paging-ellipsis">{{text}}</span>
+    {{/if}}
+  {{/pages}}
+</p>
+{{/if}}
+
+{{#if templates}}
+    <ul class="templet-list">
+    {{#templates}}
+      <li id="{{id}}" class=list-item data-code={{code_number}}>
+        <a class=img href="/demo/editor?id={{id}}" target=_blank>
+          <img src="{{img}}!mlog">
+        </a>
+        <div class=name>{{name}}</div>
+      </li>
+    {{/templates}}
+    </ul>
+{{else}}
+  <div class="ui-tipbox ui-tipbox-wait">
+      <div class="ui-tipbox-icon">
+          <i class="iconfont" title="等待">&#xF04B;</i>
+      </div>
+      <div class="ui-tipbox-content">
+          <h3 class="ui-tipbox-title">敬请期待</h3>
+          <p class="ui-tipbox-explain">该类目暂无模板，敬请期待。</p>
+      </div>
+  </div>
+{{/if}}
+
+{{#if pages}}
+<p class="ui-paging">
+  {{#pages}}
+    {{#if link}}
+    <a class="ui-paging-item
+    {{#if active}}
+     ui-paging-current
+    {{/if}}
+    " 
+    data-page="{{text}}"
+    href="#">{{text}}</a>
+    {{else}}
+    <span class="ui-paging-ellipsis">{{text}}</span>
+    {{/if}}
+  {{/pages}}
+</p>
+{{/if}}
+</div>

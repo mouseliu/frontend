@@ -1,0 +1,6 @@
+.templet-list .list-item {
+    display: inline-block;
+    margin: 10px;
+    border: solid 1px #DFE9F2;
+    padding: 10px
+}
