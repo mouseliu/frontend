@@ -37,7 +37,53 @@
 					</li>
 				</ol>
 			</div>
-			<div id="cart"></div>
+			<div id="cart">
+				<div class="cart-hd">
+					<div class="cart-th th-select">
+						<input id="checkbox-all" name="checkbox-all" type="checkbox">
+						<label for="checkbox-all">全选</label>
+					</div>
+					<div class="cart-th th-goods">商品</div>
+					<div class="cart-th th-price">价格</div>
+					<div class="cart-th th-inventory">库存</div>
+					<div class="cart-th th-quantity">数量</div>
+					<div class="cart-th th-action">操作</div>
+				</div>
+				<div class="cart-list">
+					<div class="cart-item">
+						<div class="cart-td td-select">
+							<input type="checkbox">
+						</div>
+						<div class="cart-td td-goods">
+							<a class="td-goods-img" href=""><img src="" alt=""></a>
+							<a class="td-goods-info" href="">描述描述描述描述描述描述</a>
+						</div>
+						<div class="cart-td td-price">
+							<span>¥2799.00</span>
+						</div>
+						<div class="cart-td td-inventory">
+							<span>有货</span>
+						</div>
+						<div class="cart-td td-quantity">
+							<div class="quantity-form">
+                            <a href="javascript:void(0);" class="decrement" >-</a>
+                            <input type="text" class="quantity-text" value="5">
+                            <a href="javascript:void(0);" class="increment">+</a>
+                        </div>
+						</div>
+						<div class="cart-td td-action">
+							<a href="">删除</a>
+						</div>
+					</div>
+				</div>
+				<div class="cart-bt">
+					<div class="cart-button"><a href="">去结算 &gt;</a></div>
+					<div class="total">
+                  总计（不含运费）：
+                  <span id="finalPrice">¥17290.00</span>
+              </div>
+				</div>
+			</div>
     	     <script type="text/javascript">
     	     	seajs.use('/js/cart/cart',function (Cart) {
     	     		var cart = new Cart({
@@ -45,46 +91,58 @@
                     });
     	     	});
     	     </script>
-			<table class="ui-table ui-table-noborder">
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>吴实</td>
-						<td>
-							<p>电话：13000111222</p>
-							<p>地址：浙江省杭州市西湖区晚唐路567号</p>
-						</td>
-						<td>操作</td>
-					</tr>
-					<tr class="ui-table-split">
-						<td>2</td>
-						<td>吴实</td>
-						<td>
-							<p>电话：13000111222</p>
-							<p>地址：浙江省杭州市西湖区晚唐路567号</p>
-						</td>
-						<td>操作</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>吴实</td>
-						<td>
-							<p>电话：13000111222</p>
-							<p>地址：浙江省杭州市西湖区晚唐路567号</p>
-						</td>
-						<td>操作</td>
-					</tr>
-					<tr class="ui-table-split">
-						<td>4</td>
-						<td>吴实</td>
-						<td>
-							<p>电话：13000111222</p>
-							<p>地址：浙江省杭州市西湖区晚唐路567号</p>
-						</td>
-						<td>操作</td>
-					</tr>
-				</tbody>
-			</table>
+    	     <div class="alice-module-dom">
+    	     	<div class="ui-box">
+    	     		<div class="ui-box-head">
+    	     			<h3 class="ui-box-head-title">收货地址</h3>
+    	     			<a href="#" class="ui-box-head-more">更多</a>
+    	     		</div>
+    	     		<div class="ui-box-container">
+    	     			<div class="ui-box-content">
+							<table class="ui-table ui-table-noborder">
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>吴实</td>
+										<td>
+											<p>电话：13000111222</p>
+											<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+										</td>
+										<td><i class="iconfont green">&#xF049;</i> 选择</td>
+									</tr>
+									<tr class="ui-table-split">
+										<td>2</td>
+										<td>吴实</td>
+										<td>
+											<p>电话：13000111222</p>
+											<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+										</td>
+										<td>操作</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>吴实</td>
+										<td>
+											<p>电话：13000111222</p>
+											<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+										</td>
+										<td>操作</td>
+									</tr>
+									<tr class="ui-table-split">
+										<td>4</td>
+										<td>吴实</td>
+										<td>
+											<p>电话：13000111222</p>
+											<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+										</td>
+										<td>操作</td>
+									</tr>
+								</tbody>
+							</table>
+    	     			</div>
+    	     		</div>
+    	     	</div>
+    	     </div>
 		</div>
 	</div>
 	<!--#include file="common/footer.html" -->
