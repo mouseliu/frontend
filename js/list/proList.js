@@ -71,7 +71,7 @@ define(function (require, exports, module) {
 			// var url = baseUrl + '?category=' + pid + '&sorts=' + sorts + '&param=' + urlParam.query() + '&page=' + this.get('page')
             // sysTip.show('玩儿命加载中，请稍候……');
             $.ajax({
-                url: url,
+                url: 'login',
                 context: this,
                 dataType: $.support.cors ? 'json' : 'jsonp',
                 success: function (data) {
