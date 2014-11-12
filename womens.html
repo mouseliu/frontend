@@ -19,7 +19,7 @@
 			<div class="wrap">
 				<div class="cont span_2_of_3">
 					<h2 class="head">车联网</h2>
-					<div id="select">
+					<!--<div id="select">
 						<div class="mt">
 							<h1>
 								的&nbsp;&nbsp; <strong>商品筛选</strong>
@@ -196,8 +196,8 @@
 							<span class="clr"></span>
 						</div>
 
-					</div>
-					<div class="mens-toolbar">
+					</div>-->
+					<!--<div class="mens-toolbar">
 						<div class="sort">
 							<div class="sort-by">
 								<label>Sort By</label>
@@ -234,7 +234,17 @@
 							<div class="clear"></div>
 						</div>
 						<div class="clear"></div>
-					</div>
+					</div>-->
+                    <div id="proList"></div>
+                    
+                    <script type="text/javascript">
+						seajs.use('/js/list/proList',function (List) {
+							var list = new List({
+								element: '#proList'
+							});
+						});
+					</script>
+                    <!--
 					<ul class="list-box">
 						<li>
 							<div class="list-main">
@@ -413,8 +423,9 @@
 							</a>
 						</div>
 						<div class="clear"></div>
-					</div>
+					</div>-->
 				</div>
+                	
 				<div class="rsidebar span_1_of_left">
 					<h5 class="m_1">Categories</h5>
 
