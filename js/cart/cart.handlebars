@@ -13,31 +13,33 @@
 	<div class="cart-th th-action">操作</div>
 </div>
 <div class="cart-list">
-	<div class="cart-item">
-		<div class="cart-td td-select">
-			<input type="checkbox">
+	{{#templates}}
+		<div class="cart-item"  id="{{id}}" data-code={{code_number}}>
+			<div class="cart-td td-select">
+				<input type="checkbox">
+			</div>
+			<div class="cart-td td-goods">
+				<a class="td-goods-img" href="/demo/editor?id={{id}}"><img src="{{img}}!mlog" alt=""></a>
+				<a class="td-goods-info" href="/demo/editor?id={{id}}">{{name}}</a>
+			</div>
+			<div class="cart-td td-price">
+				<span>¥2799.00</span>
+			</div>
+			<div class="cart-td td-inventory">
+				<span>有货</span>
+			</div>
+			<div class="cart-td td-quantity">
+				<div class="quantity-form">
+	                        <a href="javascript:void(0);" class="decrement" >-</a>
+	                        <input type="text" class="quantity-text" value="1">
+	                        <a href="javascript:void(0);" class="increment">+</a>
+	                    </div>
+			</div>
+			<div class="cart-td td-action">
+				<a class='remove' href="javascript:void(0);">删除</a>
+			</div>
 		</div>
-		<div class="cart-td td-goods">
-			<a class="td-goods-img" href=""><img src="" alt=""></a>
-			<a class="td-goods-info" href="">描述描述描述描述描述描述</a>
-		</div>
-		<div class="cart-td td-price">
-			<span>¥2799.00</span>
-		</div>
-		<div class="cart-td td-inventory">
-			<span>有货</span>
-		</div>
-		<div class="cart-td td-quantity">
-			<div class="quantity-form">
-                        <a href="javascript:void(0);" class="decrement" >-</a>
-                        <input type="text" class="quantity-text" value="5">
-                        <a href="javascript:void(0);" class="increment">+</a>
-                    </div>
-		</div>
-		<div class="cart-td td-action">
-			<a href="">删除</a>
-		</div>
-	</div>
+	 {{/templates}}
 </div>
 <div class="cart-bt">
 	<div class="cart-button"><a href="">去结算 &gt;</a></div>
