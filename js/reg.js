@@ -4,6 +4,7 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
         var NewValidator = Validator.extend({
             attrs: {
                 itemSuccessClass: 'ui-form-item-success',
+                autoSubmit: false,
                 showMessage: function(message, element) {
                     message = '<i class="ui-tiptext-icon iconfont">&#xF045;</i><span class="ui-form-explain-text">' + message + '</span>';
                     // this.getExplain(element).html(element.attr('data-explain') || ' ');
@@ -13,7 +14,8 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
                     this.getItem(element).removeClass(this.get('itemSuccessClass')).addClass(this.get('itemErrorClass'));
                 },
                 hideMessage: function(message, element) {
-                    message = '<i class="ui-tiptext-icon iconfont">&#xF049;</i>';
+                    message = message || '';
+                    message = '<i class="ui-tiptext-icon iconfont">&#xF049;</i><span class="ui-form-explain-text">' + message + '</span>';
 
                     this.getExplain(element).removeClass('ui-tiptext-error')
                         .addClass('ui-tiptext ui-tiptext-success')
@@ -23,55 +25,61 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
             }
         });
 
+        NewValidator.addRule('checkMoblieExist', function(options, commit) {
+            var element = options.element,
+                item = Validator.query('form').getItem(element);
+
+            item.addClass('ui-form-item-loading');
+
+            $.getJSON('checkMoblieExist', {
+                mobile: item.val()
+            }, function(data) {
+                item.removeClass('ui-form-item-loading');
+                commit(data.state, data.msg);
+            });
+        });
+
+        var step1 = $('#register-step1'),
+            regNav = $('#register-nav'),
+            regWrap = $('#register-wrap');
+
         //reg step1
         var validator = new NewValidator({
-            element: '#test-form',
+            element: step1,
+            failSilently: true,
             onFormValidated: function(err, results, form) {
-                window.console && console.log && console.log(err, results, form);
-            },
-            failSilently: true
+                //
+            }
         });
 
 
         validator.addItem({
             element: '[name="telphone"]',
             required: true,
-            rule: 'mobile ',
-            errormessageRequired: '手机号码错误或已注册'
+            rule: 'mobile checkMoblieExist'
         });
-        validator.query('#test-form [name=telphone]').on('itemValidated', function(error, message, elem) {
-            if (error == null) {
-                var url = "http://127.0.0.1:81/json/login.json";
-                $.ajax({
-                    url: url,
-                    //context: this,
-                    dataType: 'json',
-                    success: function(data) {
-                        var has = false;
-                        for (i = 0; i < data.length; i++) {
-                            if (data[i].mobile === $("#telphone").val()) {
-                                has = true;
-                            }
-                        }
-                        if (has) {
-                            message = "手机号码已注册"
-                            console.log("手机号码已注册");
-                        } else {
-                            message = "手机号码可用"
-                            console.log("手机号码可用");
-                        };
-                    },
-                    error: function(message) {
-                        //message
-                    }
-                });
-            };
-        });
+
         validator.addItem({
             element: '[name=agree]',
             required: true,
             rule: 'checkbox ',
             errormessageRequired: '请接受协议'
+        });
+
+        step1.on('submit', function(event) {
+            event.preventDefault();
+            var submitBtn = $('#step1-submit');
+                submitBtn.prop('disabled', true);
+                
+                $.getJSON('sendMsg', {
+                    mobile: $('#telphone').val()
+                }, function(data) {
+                    if (data.state) {
+                        regWrap.removeClass('step1').addClass('step2');
+                        regNav.find('li:first').removeClass('ui-step-active').addClass('ui-step-done');
+                        regNav.find('li:eq(1)').addClass('ui-step-active');
+                    }
+                });
         });
 
 
