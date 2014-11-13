@@ -1,60 +1,51 @@
 <div>
-{{#if pages}}
-<p class="ui-paging">
-  {{#pages}}
-    {{#if link}}
-    <a class="ui-paging-item
-    {{#if active}}
-     ui-paging-current
-    {{/if}}
-    " 
-    data-page="{{text}}"
-    href="#">{{text}}</a>
-    {{else}}
-    <span class="ui-paging-ellipsis">{{text}}</span>
-    {{/if}}
-  {{/pages}}
-</p>
-{{/if}}
-
 {{#if templates}}
-    <ul class="templet-list">
-    {{#templates}}
-      <li id="{{id}}" class=list-item data-code={{code_number}}>
-        <a class=img href="/demo/editor?id={{id}}" target=_blank>
-          <img src="{{img}}!mlog">
-        </a>
-        <div class=name>{{name}}</div>
-      </li>
-    {{/templates}}
-    </ul>
-{{else}}
-  <div class="ui-tipbox ui-tipbox-wait">
-      <div class="ui-tipbox-icon">
-          <i class="iconfont" title="等待">&#xF04B;</i>
-      </div>
-      <div class="ui-tipbox-content">
-          <h3 class="ui-tipbox-title">敬请期待</h3>
-          <p class="ui-tipbox-explain">该类目暂无模板，敬请期待。</p>
-      </div>
-  </div>
-{{/if}}
 
-{{#if pages}}
-<p class="ui-paging">
-  {{#pages}}
-    {{#if link}}
-    <a class="ui-paging-item
-    {{#if active}}
-     ui-paging-current
-    {{/if}}
-    " 
-    data-page="{{text}}"
-    href="#">{{text}}</a>
-    {{else}}
-    <span class="ui-paging-ellipsis">{{text}}</span>
-    {{/if}}
-  {{/pages}}
-</p>
+<div class="cart-hd">
+	<div class="cart-th th-select">
+		<input id="checkbox-all" name="checkbox-all" type="checkbox">
+		<label for="checkbox-all">全选</label>
+	</div>
+	<div class="cart-th th-goods">商品</div>
+	<div class="cart-th th-price">价格</div>
+	<div class="cart-th th-inventory">库存</div>
+	<div class="cart-th th-quantity">数量</div>
+	<div class="cart-th th-action">操作</div>
+</div>
+<div class="cart-list">
+	<div class="cart-item">
+		<div class="cart-td td-select">
+			<input type="checkbox">
+		</div>
+		<div class="cart-td td-goods">
+			<a class="td-goods-img" href=""><img src="" alt=""></a>
+			<a class="td-goods-info" href="">描述描述描述描述描述描述</a>
+		</div>
+		<div class="cart-td td-price">
+			<span>¥2799.00</span>
+		</div>
+		<div class="cart-td td-inventory">
+			<span>有货</span>
+		</div>
+		<div class="cart-td td-quantity">
+			<div class="quantity-form">
+                        <a href="javascript:void(0);" class="decrement" >-</a>
+                        <input type="text" class="quantity-text" value="5">
+                        <a href="javascript:void(0);" class="increment">+</a>
+                    </div>
+		</div>
+		<div class="cart-td td-action">
+			<a href="">删除</a>
+		</div>
+	</div>
+</div>
+<div class="cart-bt">
+	<div class="cart-button"><a href="">去结算 &gt;</a></div>
+	<div class="total">
+              总计（不含运费）：
+              <span id="finalPrice">¥17290.00</span>
+          </div>
+</div>
+
 {{/if}}
 </div>
