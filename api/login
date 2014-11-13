@@ -1,21 +1,19 @@
 {
-	state: true,
-	data: {
-		id: 1,
-		mobile: ”13888888888”,
-		note: ”备注”,
-		userLasttime:“ 2014－ 11－ 05 14： 21： 22”,
-		userLastip：“ 127.0.0.1”,
-		frontUserDetails: {
-			id: 1,
-			nickName: ”昵称”,
-			userMail: ”xxx@ xx.com”,
-			userAdds: ”XXXXX”,
-			sex: ”M”,
-			birthDate: ”2000 - 01 - 01”,
-			regTime: ”2000 - 01 - 01 11: 00: 00”,
-			regIp: ”127.0.0.1”,
-			modifyTime: ”2000 - 01 - 01 11: 00: 00”
+	"state": true,
+	"data": {
+		"id": 1,
+		"mobile": "13888888888",
+		"note": "备注",
+		"frontUserDetails": {
+			"id": 1,
+			"nickName": "昵称",
+			"userMail": "xxx@xx.com",
+			"userAdds": "XXXXX",
+			"sex": "M",
+			"birthDate": "2000-01-01",
+			"regTime": "2000 - 01 - 01 11: 00: 00",
+			"regIp": "127.0.0.1",
+			"modifyTime": "2000 - 01 - 01 11: 00: 00"
 		}
 	}
 }
