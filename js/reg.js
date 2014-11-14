@@ -4,7 +4,6 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
         var NewValidator = Validator.extend({
             attrs: {
                 itemSuccessClass: 'ui-form-item-success',
-                autoSubmit: false,
                 showMessage: function(message, element) {
                     message = '<i class="ui-tiptext-icon iconfont">&#xF045;</i><span class="ui-form-explain-text">' + message + '</span>';
                     // this.getExplain(element).html(element.attr('data-explain') || ' ');
@@ -47,8 +46,22 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
         var validator = new NewValidator({
             element: step1,
             failSilently: true,
+            autoSubmit: false,
             onFormValidated: function(err, results, form) {
-                //
+                if (!err) {
+                    var submitBtn = $('#step1-submit');
+                    submitBtn.prop('disabled', true).removeClass('ui-button-lorange').addClass('ui-button-ldisable');
+
+                    $.getJSON('sendMsg', {
+                        mobile: $('#telphone').val()
+                    }, function(data) {
+                        if (data.state) {
+                            regWrap.removeClass('step1').addClass('step2');
+                            regNav.find('li:first').removeClass('ui-step-active').addClass('ui-step-done');
+                            regNav.find('li:eq(1)').addClass('ui-step-active');
+                        }
+                    });
+                }
             }
         });
 
@@ -67,26 +80,15 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
         });
 
         step1.on('submit', function(event) {
-            event.preventDefault();
-            var submitBtn = $('#step1-submit');
-                submitBtn.prop('disabled', true);
-                
-                $.getJSON('sendMsg', {
-                    mobile: $('#telphone').val()
-                }, function(data) {
-                    if (data.state) {
-                        regWrap.removeClass('step1').addClass('step2');
-                        regNav.find('li:first').removeClass('ui-step-active').addClass('ui-step-done');
-                        regNav.find('li:eq(1)').addClass('ui-step-active');
-                    }
-                });
+            // event.preventDefault();
+            // return false;
         });
 
 
 
         //reg step2
         var validatorPass = new NewValidator({
-            element: '#test-form-pass',
+            element: '#register-step2',
             onFormValidated: function(err, results, form) {
                 window.console && console.log && console.log(err, results, form);
                 var reg_data = {
