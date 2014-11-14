@@ -49,10 +49,8 @@ define(function (require, exports, module) {
 
         	 for (var i = 0;i<$(".td-select input").length;i++) {
         	 	if ($(".td-select input").eq(i).is(":checked")) {
-        	 		console.log($(".td-select input").eq(i).parent().parent().find(".td-price span").html());
-        	 		console.log(parseInt("234das"))
-        	 		console.log(parseInt($(".td-select input").eq(i).parent().parent().find(".td-price span").html()));
-        	 		total+=$(".td-select input").eq(i).parent().parent().find(".quantity-text").val()*parseInt($(".td-select input").eq(i).parent().parent().find(".td-price span").html())
+        	 		console.log($(".td-select input").eq(i).parent().parent().find(".td-price span").attr("data"));
+        	 		total+=$(".td-select input").eq(i).parent().parent().find(".quantity-text").val()*$(".td-select input").eq(i).parent().parent().find(".td-price span").attr("data")
         	 	};
         	 };
         	 $("#finalPrice").html("￥"+total)
