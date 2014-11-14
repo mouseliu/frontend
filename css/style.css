@@ -11,7 +11,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 .green {color: #b5de70;}
 /* start editing from here */
-a { text-decoration: none; }
+a { text-decoration: none;color: #08c; }
 .txt-rt { text-align: right; }
 /* text align right */
 .txt-lt { text-align: left; }
@@ -893,12 +893,12 @@ font-size: 14px;
 }
 /*reg step*/
 .cell {padding: 10px 0;}
-.step1 #test-form-pass {display: none;}
+.step1 #register-step2 {display: none;}
 .step1 .ui-tipbox {display: none;}
-.step2 #test-form {display: none;}
+.step2 #register-step1 {display: none;}
 .step2 .ui-tipbox {display: none;}
-.step3 #test-form {display: none;}
-.step3 #test-form-pass {display: none;}
+.step3 #register-step1 {display: none;}
+.step3 #register-step2 {display: none;}
 /*list-box*/
 .list-box {
 	overflow: hidden;

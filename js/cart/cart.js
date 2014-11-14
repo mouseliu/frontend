@@ -26,6 +26,15 @@ define(function (require, exports, module) {
             'click .td-select input':'tdSelect',
             'click .remove':'remove'
         },
+        total:function(){
+        	total=0;
+        	 for (var i = 0;i<$(".td-select input").length;i++) {
+        	 	if ($(".td-select input").eq(i).is(":checked")) {
+        	 		total+=$(".td-select input").eq(i).parent().parent().find(".quantity-text").val()*$(".td-select input").eq(i).parent().parent().find(".td-price span").attr("data")
+        	 	};
+        	 };
+        	 $("#finalPrice").html("￥"+total)
+        },
         decrement:function(event){
         	event.preventDefault();
         	  var num=$(event.target).parent().find($(".quantity-text")).val();
@@ -35,6 +44,7 @@ define(function (require, exports, module) {
 		        	num--;
         	  };
         	 $(event.target).parent().find($(".quantity-text")).val(num)
+        	 this.total();
         },
         increment:function(event){
         	event.preventDefault();
@@ -45,15 +55,8 @@ define(function (require, exports, module) {
 		        	num++;
         	  };
         	 $(event.target).parent().find($(".quantity-text")).val(num)
+        	 this.total();
 
-
-        	 for (var i = 0;i<$(".td-select input").length;i++) {
-        	 	if ($(".td-select input").eq(i).is(":checked")) {
-        	 		console.log($(".td-select input").eq(i).parent().parent().find(".td-price span").attr("data"));
-        	 		total+=$(".td-select input").eq(i).parent().parent().find(".quantity-text").val()*$(".td-select input").eq(i).parent().parent().find(".td-price span").attr("data")
-        	 	};
-        	 };
-        	 $("#finalPrice").html("￥"+total)
         },
         checkboxAll:function(){
 
@@ -61,6 +64,7 @@ define(function (require, exports, module) {
         			///$("input[name='checkbox']").each(function(){this.checked=true;});
 	        		$(".td-select").find("input").attr("checked",'true')
         		};
+        		this.total();
         },
         tdSelect:function(event){
         	
@@ -70,13 +74,15 @@ define(function (require, exports, module) {
         		}else{
         			$("#checkbox-all").removeAttr("checked");
         		};
+        		this.total();
         },
         remove:function(event){
         		$(event.target).parent().parent().remove();
         		//remove data
+        		this.total();
         },
         getList: function () {
-
+        	 $("#finalPrice").html("￥"+total)
             var pid = this.get('pid') || 2;
             if(!category[pid]){
                 this.renderPartial();
@@ -99,6 +105,7 @@ define(function (require, exports, module) {
                     });
                     this.set('model', data.data);
                     this.renderPartial();
+        					this.total();
                     // sysTip.hide();
                 },
                 error:function(){

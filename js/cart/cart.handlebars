@@ -1,52 +1,231 @@
 <div>
 {{#if templates}}
-
-<div class="cart-hd">
-	<div class="cart-th th-select">
-		<input id="checkbox-all" name="checkbox-all" type="checkbox">
-		<label for="checkbox-all">全选</label>
+<div class="my-cart">
+	<div class="cart-hd">
+		<div class="cart-th th-select">
+			<input id="checkbox-all" name="checkbox-all" type="checkbox">
+			<label for="checkbox-all">全选</label>
+		</div>
+		<div class="cart-th th-goods">商品</div>
+		<div class="cart-th th-price">价格</div>
+		<div class="cart-th th-inventory">库存</div>
+		<div class="cart-th th-quantity">数量</div>
+		<div class="cart-th th-action">操作</div>
 	</div>
-	<div class="cart-th th-goods">商品</div>
-	<div class="cart-th th-price">价格</div>
-	<div class="cart-th th-inventory">库存</div>
-	<div class="cart-th th-quantity">数量</div>
-	<div class="cart-th th-action">操作</div>
+	<div class="cart-list">
+		{{#templates}}
+			<div class="cart-item"  id="{{id}}" data-code={{code_number}}>
+				<div class="cart-td td-select">
+					<input type="checkbox">
+				</div>
+				<div class="cart-td td-goods">
+					<a class="td-goods-img" href="/demo/editor?id={{id}}"><img src="{{img}}!mlog" alt=""></a>
+					<a class="td-goods-info" href="/demo/editor?id={{id}}">{{name}}</a>
+				</div>
+				<div class="cart-td td-price">
+					<span data="2799.00">¥2799.00</span>
+				</div>
+				<div class="cart-td td-inventory">
+					<span>有货</span>
+				</div>
+				<div class="cart-td td-quantity">
+					<div class="quantity-form">
+		                        <a href="javascript:void(0);" class="decrement" >-</a>
+		                        <input type="text" class="quantity-text" value="1">
+		                        <a href="javascript:void(0);" class="increment">+</a>
+		                    </div>
+				</div>
+				<div class="cart-td td-action">
+					<a class='remove' href="javascript:void(0);">删除</a>
+				</div>
+			</div>
+		 {{/templates}}
+	</div>
+	<div class="cart-bt">
+		<div class="cart-button"><a href="">去结算 &gt;</a></div>
+		<div class="total">
+	              总计（不含运费）：
+	              <span id="finalPrice">¥17290.00</span>
+	          </div>
+	</div>
 </div>
-<div class="cart-list">
-	{{#templates}}
-		<div class="cart-item"  id="{{id}}" data-code={{code_number}}>
-			<div class="cart-td td-select">
-				<input type="checkbox">
+<div class="my-order">
+	<div class="alice-module-dom">
+		<div class="ui-box">
+			<div class="ui-box-head">
+				<h3 class="ui-box-head-title">收货地址</h3>
 			</div>
-			<div class="cart-td td-goods">
-				<a class="td-goods-img" href="/demo/editor?id={{id}}"><img src="{{img}}!mlog" alt=""></a>
-				<a class="td-goods-info" href="/demo/editor?id={{id}}">{{name}}</a>
-			</div>
-			<div class="cart-td td-price">
-				<span data="2799.00">¥2799.00</span>
-			</div>
-			<div class="cart-td td-inventory">
-				<span>有货</span>
-			</div>
-			<div class="cart-td td-quantity">
-				<div class="quantity-form">
-	                        <a href="javascript:void(0);" class="decrement" >-</a>
-	                        <input type="text" class="quantity-text" value="1">
-	                        <a href="javascript:void(0);" class="increment">+</a>
-	                    </div>
-			</div>
-			<div class="cart-td td-action">
-				<a class='remove' href="javascript:void(0);">删除</a>
+			<div class="ui-box-container">
+				<div class="ui-box-content">
+					<table class="ui-table ui-table-noborder">
+						<tbody>
+							<tr>
+								<td>
+									<input type="radio">
+									<label for="">选择</label>
+								</td>
+								<td>吴实</td>
+								<td>
+									<p>电话：13000111222</p>
+									<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+								</td>
+								<td>
+									<p>
+										<button class="ui-button ui-button-sorange">编辑</button>
+										<a href="javascript:;" class="ui-button ui-button-swhite">删除</a>
+									</p>
+								</td>
+							</tr>
+							<tr class="ui-table-split">
+								<td>
+									<input type="radio">
+									<label for="">选择</label>
+								</td>
+								<td>吴实</td>
+								<td>
+									<p>电话：13000111222</p>
+									<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+								</td>
+								<td>
+									<p>
+										<button class="ui-button ui-button-sorange">编辑</button>
+										<a href="javascript:;" class="ui-button ui-button-swhite">删除</a>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="radio">
+									<label for="">选择</label>
+								</td>
+								<td>吴实</td>
+								<td>
+									<p>电话：13000111222</p>
+									<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+								</td>
+								<td>
+									<p>
+										<button class="ui-button ui-button-sorange">编辑</button>
+										<a href="javascript:;" class="ui-button ui-button-swhite">删除</a>
+									</p>
+								</td>
+							</tr>
+							<tr class="ui-table-split">
+								<td align="center" colspan="4">
+									<a href="javascript:;" class="ui-button ui-button-swhite">添加地址</a>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" colspan="4">
+									<form id="address" class="ui-form">
+										<div class="ui-form-item" style="z-index: 97;">
+											<label for="name" class="ui-label">
+												<span class="ui-form-required">*</span>
+												收货人：
+											</label>
+											<input id="name" maxlength="6" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
+										</div>
+										<div class="ui-form-item">
+											<label for="" class="ui-label">
+												<span class="ui-form-required">*</span>
+												所在地区
+											</label>
+											<select id="province" name="province">
+												<option value="">请选择省</option>
+												<option value="北京">北京</option>
+												<option value="上海">上海</option>
+												<option value="天津">天津</option>
+												<option value="浙江">浙江</option>
+											</select>
+											<select id="province" name="province">
+												<option value="">请选择市</option>
+												<option value="北京">北京</option>
+												<option value="上海">上海</option>
+												<option value="天津">天津</option>
+												<option value="浙江">浙江</option>
+											</select>
+											<select id="province" name="province">
+												<option value="">请选择县</option>
+												<option value="北京">北京</option>
+												<option value="上海">上海</option>
+												<option value="天津">天津</option>
+												<option value="浙江">浙江</option>
+											</select>
+											<p class="ui-form-explain">更多地区即将开通，敬请期待。</p>
+										</div>
+										<div class="ui-form-item">
+											<label for="name" class="ui-label">
+												<span class="ui-form-required">*</span>
+												详细地址：
+											</label>
+											<input id="name" maxlength="6" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
+										</div>
+										<div class="ui-form-item">
+											<label for="name" class="ui-label">
+												<span class="ui-form-required">*</span>
+												手机号码：
+											</label>
+											<input id="name" maxlength="6" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
+										</div>
+										<div class="ui-form-item">
+											<input type="submit" class="ui-button ui-button-morange" value="确定">
+											<input type="button" class="ui-button ui-button-mwhite" value="取消">
+										</div>
+
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-	 {{/templates}}
-</div>
-<div class="cart-bt">
-	<div class="cart-button"><a href="">去结算 &gt;</a></div>
-	<div class="total">
-              总计（不含运费）：
-              <span id="finalPrice">¥17290.00</span>
-          </div>
+	</div>
+
+	<div class="order">
+		<div class="cart-hd">
+			<div class="cart-th th-goods">商品</div>
+			<div class="cart-th th-price">价格</div>
+			<div class="cart-th th-inventory">库存</div>
+			<div class="cart-th th-quantity">数量</div>
+		</div>
+		<div class="cart-list">
+
+			<div class="cart-item">
+				<div class="cart-td td-goods">
+					<a class="td-goods-img" href="/demo/editor?id=217">
+						<img src="http://img1.kywcdn.com/0/000/001/rgb-0000001363.jpg!mlog" alt=""></a>
+					<a class="td-goods-info" href="/demo/editor?id=217">简洁韵味米白通用</a>
+				</div>
+				<div class="cart-td td-price">
+					<span data="2799.00">¥2799.00</span>
+				</div>
+				<div class="cart-td td-inventory">
+					<span>有货</span>
+				</div>
+				<div class="cart-td td-quantity">
+					&#120;<span class="number">5</span>
+				</div>
+			</div>
+		</div>
+		<div class="cart-toolbar clear">
+			<div class="totalCase float-rt">
+				<p><span id="totalSkuPrice">¥19094.00</span>总计：</p>
+				<p><span id="totalRePrice">- ¥0.00</span>返现：</p>
+				<p><span id="freightSpan">¥12.00</span>运费：</p>
+			</div>
+			<div class="amout float-rt"><span id="selectedCount">6</span> 件商品</div>
+		</div>
+		<div class="cart-bt">
+			<div class="cart-button">
+				<a href="">提交订单</a>
+			</div>
+			<div class="total">
+				应付总额：
+				<span id="finalPrice">￥0</span>
+			</div>
+		</div>
+	</div>
 </div>
 
 {{/if}}

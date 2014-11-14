@@ -1,33 +1,36 @@
 #cart { font-size: 12px; padding: 20px 0; font: 12px Arial, Verdana, "\5b8b\4f53"; }
+.my-cart { padding-bottom: 20px; }
+.my-order { padding-bottom: 20px; }
+.alice-module-dom { margin-bottom: 20px; }
 .cart-hd { height: 35px; line-height: 35px; background-color: #f7f7f7; border: 1px solid #ddd; border-bottom: none; overflow: hidden; }
 .cart-th { float: left; width: 10%; }
 .cart-list { border: 1px solid #ddd; }
 .cart-list .cart-item:first-child { border-top: none; }
 .th-select, .td-select { width: 10%; }
-.td-select {width: 8%;}
-.th-goods {text-align: center;}
+.td-select { width: 8%; }
+.th-goods { text-align: center; }
 .th-goods, .td-goods { width: 45%; }
 .td-goods { width: 47%; }
 .th-price, .td-price { width: 15%; text-align: right; }
 .th-inventory, .td-inventory { width: 10%; text-align: center; }
 .th-quantity, .td-quantity { width: 10%; text-align: center; }
 .th-action, .td-action { width: 10%; text-align: center; }
-.th-select input {margin: 11px 5px 0 19px;margin: 11px 5px 0 16px\9; }
-.th-select label {line-height: 35px;display: inline-block;vertical-align: top;}
-.td-select input {
-margin: 20px 0 0 19px;
-margin: 17px 0 0 16px\9;
-float: left;
-display: inline;
+.my-order .th-goods,.my-order .td-goods {
+	width: 65%;
 }
+.my-order .td-goods {width: 61%;padding: 0 2%;}
+.th-select input { margin: 11px 5px 0 19px; margin: 11px 5px 0 16px\9; }
+.th-select label { line-height: 35px; display: inline-block; vertical-align: top; }
+.td-select input { margin: 20px 0 0 19px; margin: 17px 0 0 16px\9; float: left; display: inline; }
 .cart-item { border-top: 1px solid #ddd; overflow: hidden; padding: 10px 0; min-height: 52px; }
 .cart-td { float: left; }
 .td-goods-img { width: 50px; height: 50px; float: left; border: 1px solid #ddd; margin-right: 10px; }
 .td-goods-info { display: block; overflow: hidden; color: #005ea7; }
-.td-goods-info:hover {color: #f16f20;text-decoration: underline;}
+.td-goods-info:hover { color: #f16f20; text-decoration: underline; }
 .td-price { font-size: 14px; }
-.td-price, .td-inventory, .td-action { line-height: 52px; }
-.td-action a {color: #005ea7;}
+.td-price, .td-inventory, .td-action, .my-order .td-quantity  { line-height: 52px; }
+
+.td-action a { color: #005ea7; }
 .quantity-form { width: 76px; height: 22px; margin: 0 auto; padding-top: 16px; overflow: hidden; text-align: left; }
 .quantity-form a { width: 13px; height: 13px; margin-top: 3px; float: left; display: block; overflow: hidden; background: #fff; border: 1px solid #ccc; text-align: center; font: 12px/150% Arial, Verdana, "\5b8b\4f53"; line-height: 13px; color: #666; }
 .quantity-text { float: left; width: 34px; height: 18px; border: 1px solid #ccc; overflow: hidden; text-align: center; background-color: #fff; outline: 0; }
@@ -40,3 +43,28 @@ a.increment { float: right; }
 .total span { vertical-align: middle; color: #e4393c; font-size: 20px; font-weight: 400; font-family: Verdana, Arial; }
 
 
+.cart-toolbar {
+	padding: 5px 10px;
+	line-height: 22px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	border-top: none;
+}
+
+.cart-toolbar .amout {
+	padding-right: 10px;
+}
+.cart-toolbar .amout span {
+	color: #e4393c;
+	font-family: Verdana,Arial;
+}
+.cart-toolbar .totalCase {
+	width: 180px;
+}
+.cart-toolbar .totalCase p {
+	clear: both;
+}
+.cart-toolbar .totalCase span {
+	float: right;
+	font-family: Verdana,Arial;
+}
