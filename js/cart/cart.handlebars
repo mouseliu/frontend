@@ -1,48 +1,5 @@
 <div>
 {{#if templates}}
-<<<<<<< HEAD
-<div id="select">
-	<div class="mt">
-		<h1>
-			的&nbsp;&nbsp; <strong>商品筛选</strong>
-		</h1>
-		<div class="total">
-			<span>
-				(共 <strong id="res_count">29747</strong>
-				个商品)
-			</span>
-		</div>
-	</div>
-	<div class="mc">
-		<div class="attr" id="select-price">
-			<div class="a-key">品牌：</div>
-			<div class="a-values">
-				<div class="v-fold">
-					<ul class="f-list">
-						<li>
-							<a href="javascript:;" data="联想">联想</a>
-						</li>
-						<li>
-							<a href="javascript:;" data="惠普">惠普</a>
-						</li>
-						<li>
-							<a href="javascript:;" data="苹果">苹果</a>
-						</li>
-					</ul>
-				</div>
-				<div class="v-btns">
-					<a href="javascript:;" class="btn-red disabled">确定</a>
-					<a href="javascript:;" class="btn-gray">取消</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="mb" id="advanced">
-		<div class="attr-extra open">
-			<div>
-				更多选项
-				<b></b>
-=======
 <div class="my-cart">
 	<div class="cart-hd">
 		<div class="cart-th th-select">
@@ -266,84 +223,19 @@
 			<div class="total">
 				应付总额：
 				<span id="finalPrice">￥0</span>
->>>>>>> origin/master
 			</div>
 		</div>
 	</div>
 </div>
-<<<<<<< HEAD
-<div id="filter" clstag="thirdtype|keycount|thirdtype|filter">
-	<div class="fore1">
-		<dl class="order">
-			<dt>排序：</dt>
-			<dd class="curr">
-				<a href="javascript:;" data="relevant">相关度</a>
-				<b></b>
-			</dd>
-			<dd class="">
-				<a href="javascript:;" data="sale">销量</a>
-				<b></b>
-			</dd>
-			<dd class="">
-				<a href="javascript:;" data="price">价格</a>
-				<b></b>
-			</dd>
-			<dd class="">
-				<a href="javascript:;" data="comment">评论数</a>
-				<b></b>
-			</dd>
-			<dd class="">
-				<a href="javascript:;" data="shelvesTime">上架时间</a>
-				<b></b>
-			</dd>
-		</dl>
-
-		<div class="pagin pagin-m" id="top_pagi">
-			<span class="text"> <i>1</i>
-				/13
-			</span>
-			<span class="prev-disabled">
-				上一页
-				<b></b>
-			</span>
-			<a onclick="SEARCH.page(2)" href="javascript:;" class="next" title="使用方向键右键也可翻到下一页哦！">
-				下一页
-				<b></b>
-			</a>
-		</div>
-		<span class="clr"></span>
-	</div>
+<div class="ui-tipbox ui-tipbox-success">
+    <div class="ui-tipbox-icon">
+        <i class="iconfont" title="成功">&#xF049;</i>
+    </div>
+    <div class="ui-tipbox-content">
+        <h3 class="ui-tipbox-title">成功提交订单</h3>
+        <p class="ui-tipbox-explain">成功提交订单</p>
+        <p class="ui-tipbox-explain"><a href="#">返回首页</a> | <a href="#">个人中心</a></p>
+    </div>
 </div>
-<ul class="list-box templet-list">
-	{{#templates}}
-	<li id="{{id}}" data-code={{code_number}}>
-		<div class="list-main">
-			<a href="/demo/editor?id={{id}}"><img src="{{img}}!mlog" alt=""/></a>
-			<p class="dese"><a href="single.html">{{name}}</a></p>
-			<p class="price">￥：123</p>
-		</div>
-	</li>
-	 {{/templates}}
-</ul>
-{{/if}}
-=======
->>>>>>> origin/master
-
-{{#if pages}}
-<p class="ui-paging">
-  {{#pages}}
-    {{#if link}}
-    <a class="ui-paging-item
-    {{#if active}}
-     ui-paging-current
-    {{/if}}
-    "
-    data-page="{{text}}"
-    href="javascript:;">{{text}}</a>
-    {{else}}
-    <span class="ui-paging-ellipsis">{{text}}</span>
-    {{/if}}
-  {{/pages}}
-</p>
 {{/if}}
 </div>

@@ -3,6 +3,12 @@ define(function (require, exports, module) {
         Widget = require('widget'),
         tpl = require('./cart.handlebars');
     var Templatable = require('templatable');
+    //localStorage 
+    var store=require('store');
+    store.set('user', { name: 'marcus', likes: 'javascript' })
+    var user = store.get('user')
+    console.log(user.name + ' likes ' + user.likes)
+
     require('./css.css');
     var category = {
         2: 'card/commerce',
