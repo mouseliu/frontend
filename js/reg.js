@@ -38,7 +38,7 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
             });
         });
 
-        var step1 = $('#register-step1'),
+        var step1 = $('#register'),
             regNav = $('#register-nav'),
             regWrap = $('#register-wrap');
 
@@ -48,6 +48,11 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
             failSilently: true,
             autoSubmit: false,
             onFormValidated: function(err, results, form) {
+                var reg_data = {
+                    mobile: '',
+                    password: md5($('#password').val() + 'iotmaill@2014', 'youhua'),
+                    validCode: ''
+                }
                 if (!err) {
                     var submitBtn = $('#step1-submit');
                     submitBtn.prop('disabled', true).removeClass('ui-button-lorange').addClass('ui-button-ldisable');
@@ -87,26 +92,26 @@ seajs.use(['validator', '$', 'md5'], function(Validator, $, md5) {
 
 
         //reg step2
-        var validatorPass = new NewValidator({
-            element: '#register-step2',
-            onFormValidated: function(err, results, form) {
-                window.console && console.log && console.log(err, results, form);
-                var reg_data = {
-                    mobile: '',
-                    password: md5($('#password').val() + 'iotmaill@2014', 'youhua'),
-                    validCode: ''
-                }
-            },
-            failSilently: true
-        })
+        // var validatorPass = new NewValidator({
+        //     element: '#register-step2',
+        //     onFormValidated: function(err, results, form) {
+        //         window.console && console.log && console.log(err, results, form);
+        //         var reg_data = {
+        //             mobile: '',
+        //             password: md5($('#password').val() + 'iotmaill@2014', 'youhua'),
+        //             validCode: ''
+        //         }
+        //     },
+        //     failSilently: true
+        // })
 
-        validatorPass.addItem({
+        validator.addItem({
             element: '#password',
             required: true,
             rule: 'minlength{"min":5} maxlength{"max":20}'
         })
 
-        validatorPass.addItem({
+        validator.addItem({
             element: '#password-confirmation',
             required: true,
             rule: 'confirmation{target: "#password", name: "第一遍"}',
