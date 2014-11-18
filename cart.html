@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>提交订单 :: 智购网——中国移动旗下购物平台</title>
+	<!--#include file="common/header-meta.html" -->
+</head>
+<body>
+	<!--#include file="common/header-body.html" -->
+	<div class="register_account">
+		<div class="wrap">
+			<h4 class="title">我的购物车</h4>
+			<div class="navi-container">
+				<ol class="ui-step    ui-step-3 ">
+					<li class="ui-step-start ui-step-active">
+						<div class="ui-step-line">-</div>
+						<div class="ui-step-icon"> <i class="iconfont">&#x0079;</i> <i class="ui-step-number">1</i>
+							<span class="ui-step-text">我的购物车</span>
+						</div>
+					</li>
+
+					<li>
+						<div class="ui-step-line">-</div>
+						<div class="ui-step-icon">
+							<i class="iconfont">&#x0079;</i>
+							<i class="ui-step-number">2</i>
+							<span class="ui-step-text">填写核对订单信息</span>
+						</div>
+					</li>
+
+					<li class="ui-step-end">
+						<div class="ui-step-line">-</div>
+						<div class="ui-step-icon">
+							<i class="iconfont">&#x0079;</i>
+							<i class="iconfont ui-step-number">&#xF029;</i>
+							<span class="ui-step-text">成功提交订单</span>
+						</div>
+					</li>
+				</ol>
+			</div>
+			<div id="cart">
+				<!-- <div class="cart-hd">
+				<div class="cart-th th-select">
+					<input id="checkbox-all" name="checkbox-all" type="checkbox">
+					<label for="checkbox-all">全选</label>
+				</div>
+				<div class="cart-th th-goods">商品</div>
+				<div class="cart-th th-price">价格</div>
+				<div class="cart-th th-inventory">库存</div>
+				<div class="cart-th th-quantity">数量</div>
+				<div class="cart-th th-action">操作</div>
+			</div>
+			<div class="cart-list">
+				<div class="cart-item">
+					<div class="cart-td td-select">
+						<input type="checkbox"></div>
+					<div class="cart-td td-goods">
+						<a class="td-goods-img" href="">
+							<img src="" alt=""></a>
+						<a class="td-goods-info" href="">描述描述描述描述描述描述</a>
+					</div>
+					<div class="cart-td td-price">
+						<span>¥2799.00</span>
+					</div>
+					<div class="cart-td td-inventory">
+						<span>有货</span>
+					</div>
+					<div class="cart-td td-quantity">
+						<div class="quantity-form">
+							<a href="javascript:void(0);" class="decrement" >-</a>
+							<input type="text" class="quantity-text" value="5">
+							<a href="javascript:void(0);" class="increment">+</a>
+						</div>
+					</div>
+					<div class="cart-td td-action">
+						<a href="">删除</a>
+					</div>
+				</div>
+			</div>
+			<div class="cart-bt">
+				<div class="cart-button">
+					<a href="">去结算 &gt;</a>
+				</div>
+				<div class="total">
+					总计（不含运费）：
+					<span id="finalPrice">¥17290.00</span>
+				</div>
+			</div>
+			-->
+		</div>
+		<script type="text/javascript">
+    	     	seajs.use('/js/cart/cart',function (Cart) {
+    	     		var cart = new Cart({
+                        element: '#cart'
+                    });
+    	     	});
+    	     </script>
+
+	</div>
+</div>
+<!--#include file="common/footer.html" -->
+</body>
+</html>

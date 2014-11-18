@@ -11,7 +11,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 .green {color: #b5de70;}
 /* start editing from here */
-a { text-decoration: none; }
+a { text-decoration: none;color: #08c; }
 .txt-rt { text-align: right; }
 /* text align right */
 .txt-lt { text-align: left; }
@@ -835,10 +835,10 @@ ul.delivery-list li a:hover { color: #000; }
 .tab b { display: none; position: absolute; left: 50%; bottom: -10px; overflow: hidden; width: 0; height: 0; border-width: 5px; border-style: solid dashed dashed; border-color: #4598D2 transparent transparent; margin-left: -4px; }
 .tab .curr b { display: block; }
 .v-fold { overflow: hidden; }
-.f-list { overflow: hidden; float: left; }
+/*.f-list { overflow: hidden; float: left; }
 .f-list li { float: left; height: 20px; margin-right: 32px; padding-top: 5px; }
 .f-list a { float: left; height: 15px; line-height: 14px; text-decoration: none; overflow: hidden; white-space: nowrap; font-family: verdana; color: #005aa0; }
-.f-list a:hover, .f-list a.curr { color: #E4393C; }
+.f-list a:hover, .f-list a.curr { color: #E4393C; }*/
 .attr .pr { float: left; width: 148px; }
 .attr .pr .price-range { float: left; width: 40px; height: 17px; padding: 1px; border: 1px solid #ccc; margin: 2px 4px 0 0; line-height: 17px; font-family: verdana; }
 .attr .pr i { float: left; overflow: hidden; width: 4px; height: 1px; margin: 12px 4px 0 0; background: #ccc; }
@@ -893,12 +893,12 @@ font-size: 14px;
 }
 /*reg step*/
 .cell {padding: 10px 0;}
-#step1 #test-form-pass {display: none;}
-#step1 .ui-tipbox {display: none;}
-#step2 #test-form {display: none;}
-#step2 .ui-tipbox {display: none;}
-#step3 #test-form {display: none;}
-#step3 #test-form-pass {display: none;}
+.step1 #register-step2 {display: none;}
+.step1 .ui-tipbox {display: none;}
+.step2 #register-step1 {display: none;}
+.step2 .ui-tipbox {display: none;}
+.step3 #register-step1 {display: none;}
+.step3 #register-step2 {display: none;}
 /*list-box*/
 .list-box {
 	overflow: hidden;

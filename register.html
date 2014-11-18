@@ -7,11 +7,11 @@
 </head>
 <body>
 	<!--#include file="common/header-body.html" -->
-	<div class="register_account step1">
+	<div class="register_account">
 		<div class="wrap">
 			<h4 class="title">注册</h4>
 			<div class="navi-container">
-				<ol class="ui-step    ui-step-3 ">
+				<ol id="register-nav" class="ui-step    ui-step-3 ">
 					<li class="ui-step-start ui-step-active">
 						<div class="ui-step-line">-</div>
 						<div class="ui-step-icon"> <i class="iconfont">&#x0079;</i> <i class="ui-step-number">1</i>
@@ -24,7 +24,7 @@
 						<div class="ui-step-icon">
 							<i class="iconfont">&#x0079;</i>
 							<i class="ui-step-number">2</i>
-							<span class="ui-step-text">设置身份信息</span>
+							<span class="ui-step-text">设置密码</span>
 						</div>
 					</li>
 
@@ -39,20 +39,19 @@
 				</ol>
 			</div>
 
-			<div class="cell" id="step1">
-				<form id="test-form" class="ui-form">
+			<div class="step1" id="register-wrap">
+				<form id="register-step1" class="ui-form">
 
 					<div class="ui-form-item">
 						<label for="telphone" class="ui-label">
-							<span class="ui-form-required">*</span>
 							手机号码：
 						</label>
-						 <input id="telphone" name="telphone" class="ui-input"  />
+						 <input id="telphone" name="telphone" class="ui-input" required data-display="手机号码" data-rule="mobile checkMoblieExist" />
 						<div class="ui-form-explain">请输入您的手机号码。</div>
 					</div>
 
 					<div class="ui-form-item">
-						<input class="ui-checkbox" id="test2" value="" type="checkbox" name="agree">
+						<input class="ui-checkbox" id="test2" value="1" type="checkbox" name="agree">
 						<label class="ui-checkbox-label" for="test2">
 							我已阅读并接受
 							<a href="#" >《智购网服务协议》</a>
@@ -60,11 +59,11 @@
 					</div>
 
 					<div class="ui-form-item">
-						<input type="submit" class="ui-button ui-button-lorange" value="下一步"></div>
+						<input id="step1-submit" type="submit" class="ui-button ui-button-lorange" value="下一步"></div>
 
 				</form>
 
-				<form id="test-form-pass" class="ui-form">
+				<form id="register-step2" class="ui-form">
 					<div class="ui-form-item">
 						<label for="number" class="ui-label">
 							手机号：

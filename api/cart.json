@@ -1,0 +1,22 @@
+{
+	state: true,
+	data: {
+			id: 1,
+			url:"url"
+			price:"$122",
+			inventory:"有",
+			quantity:"12",
+			frontUserDetails: {
+				id: 1,
+				nickName: "昵称",
+				userMail: "xxx@ xx.com",
+				userAdds: "XXXXX",
+				sex: "M",
+				birthDate: "2000 - 01 - 01",
+				regTime: "2000 - 01 - 01 11: 00: 00",
+				regIp: "127.0.0.1",
+				modifyTime: "2000 - 01 - 01 11: 00: 00"
+			}
+		}
+	}
+}
