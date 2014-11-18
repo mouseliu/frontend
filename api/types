@@ -7,7 +7,25 @@
 			sort:{
 				'相关度','销量','价格','评论数','上架时间'
 			},
+			goods:{
+					{
+						gid: '0001',
+						bid: 'lenevo0001',
+						bname: '联想',
+						gname: 'ThinkPad E430C',
+						price: '1200',
+						img: 'http://img1.kywcdn.com/0/000/001/rgb-0000001729.jpg'
+					},
+					{
+						gid: '0002',
+						bid: 'lenevo0002',
+						bname: '联想',
+						gname: 'ThinkPad E430D',
+						price: '1300',
+						img: 'http://img1.kywcdn.com/0/000/001/rgb-0000001729.jpg'
+					}
 
+			}
 		}
 	}
 }
