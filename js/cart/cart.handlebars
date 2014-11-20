@@ -61,8 +61,8 @@
 						<tbody>
 							<tr>
 								<td>
-									<input type="radio">
-									<label for="">选择</label>
+									<input id="ad01" type="radio" name="ad-select">
+									<label for="ad01">选择</label>
 								</td>
 								<td>吴实</td>
 								<td>
@@ -71,32 +71,15 @@
 								</td>
 								<td>
 									<p>
-										<button class="ui-button ui-button-sorange">编辑</button>
-										<a href="javascript:;" class="ui-button ui-button-swhite">删除</a>
-									</p>
-								</td>
-							</tr>
-							<tr class="ui-table-split">
-								<td>
-									<input type="radio">
-									<label for="">选择</label>
-								</td>
-								<td>吴实</td>
-								<td>
-									<p>电话：13000111222</p>
-									<p>地址：浙江省杭州市西湖区晚唐路567号</p>
-								</td>
-								<td>
-									<p>
-										<button class="ui-button ui-button-sorange">编辑</button>
-										<a href="javascript:;" class="ui-button ui-button-swhite">删除</a>
+										<button class="ui-button ui-button-sorange o-edit">编辑</button>
+										<a href="javascript:;" class="ui-button ui-button-swhite o-remove">删除</a>
 									</p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<input type="radio">
-									<label for="">选择</label>
+									<input id="ad02" type="radio" name="ad-select">
+									<label for="ad02">选择</label>
 								</td>
 								<td>吴实</td>
 								<td>
@@ -105,67 +88,74 @@
 								</td>
 								<td>
 									<p>
-										<button class="ui-button ui-button-sorange">编辑</button>
-										<a href="javascript:;" class="ui-button ui-button-swhite">删除</a>
+										<button class="ui-button ui-button-sorange o-edit">编辑</button>
+										<a href="javascript:;" class="ui-button ui-button-swhite o-remove">删除</a>
 									</p>
 								</td>
 							</tr>
-							<tr class="ui-table-split">
+							<tr>
+								<td>
+									<input id="ad03" type="radio" name="ad-select">
+									<label for="ad03">选择</label>
+								</td>
+								<td>吴实</td>
+								<td>
+									<p>电话：13000111222</p>
+									<p>地址：浙江省杭州市西湖区晚唐路567号</p>
+								</td>
+								<td>
+									<p>
+										<button class="ui-button ui-button-sorange o-edit">编辑</button>
+										<a href="javascript:;" class="ui-button ui-button-swhite o-remove">删除</a>
+									</p>
+								</td>
+							</tr>
+
+
+							<tr>
 								<td align="center" colspan="4">
-									<a href="javascript:;" class="ui-button ui-button-swhite">添加地址</a>
+									<a id="add-address" href="javascript:;" class="ui-button ui-button-swhite">添加地址</a>
 								</td>
 							</tr>
-							<tr>
+							<tr id="address-form" class="hide">
 								<td align="left" colspan="4">
 									<form id="address" class="ui-form">
-										<div class="ui-form-item" style="z-index: 97;">
+										<div class="ui-form-item">
 											<label for="name" class="ui-label">
 												<span class="ui-form-required">*</span>
 												收货人：
 											</label>
-											<input id="name" maxlength="6" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
+											<input id="name" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
 										</div>
 										<div class="ui-form-item">
 											<label for="" class="ui-label">
 												<span class="ui-form-required">*</span>
 												所在地区
 											</label>
-											<select id="province" name="province">
-												<option value="">请选择省</option>
-												<option value="北京">北京</option>
-												<option value="上海">上海</option>
-												<option value="天津">天津</option>
-												<option value="浙江">浙江</option>
+											<select id="sel-province" name="province">
+												<option value="">请选择省/市</option>
 											</select>
-											<select id="province" name="province">
-												<option value="">请选择市</option>
-												<option value="北京">北京</option>
-												<option value="上海">上海</option>
-												<option value="天津">天津</option>
-												<option value="浙江">浙江</option>
+											<select id="sel-city" name="city">
+												<option value="">请选择区/县</option>
 											</select>
-											<select id="province" name="province">
-												<option value="">请选择县</option>
-												<option value="北京">北京</option>
-												<option value="上海">上海</option>
-												<option value="天津">天津</option>
-												<option value="浙江">浙江</option>
+											<select id="sel-county" name="county">
+												<option value="">请选择乡/镇</option>
 											</select>
 											<p class="ui-form-explain">更多地区即将开通，敬请期待。</p>
 										</div>
 										<div class="ui-form-item">
-											<label for="name" class="ui-label">
+											<label for="address-more" class="ui-label">
 												<span class="ui-form-required">*</span>
 												详细地址：
 											</label>
-											<input id="name" maxlength="6" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
+											<input id="address-more" name="address-more" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
 										</div>
 										<div class="ui-form-item">
 											<label for="name" class="ui-label">
 												<span class="ui-form-required">*</span>
 												手机号码：
 											</label>
-											<input id="name" maxlength="6" name="name" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
+											<input id="phone" name="phone" class="ui-input ui-input-shorter" type="text" value="" placeholder="">
 										</div>
 										<div class="ui-form-item">
 											<input type="submit" class="ui-button ui-button-morange" value="确定">
